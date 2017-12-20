@@ -1,0 +1,40 @@
+#!/bin/bash
+HOMEDIR="/Users/c3w/werk/quidspeak"
+ROOTS="${HOMEDIR}/roots"
+VOICE="Victoria"
+#say -v victoria "${*}"
+case ${1} in
+	Identify|identify )
+		shift
+		say -v ${VOICE} "Welcome, $*"
+		echo "<user><name>$*</name></user>" > /tmp/quidspeak_user.xml
+
+	;;
+	* )
+		for word in $*; do {
+			if [ -d ${ROOTS}/${word} ]; then {
+				for file in ${ROOTS}/${word}/*.txt; do {
+					for wordLocal in $*; do {
+						echo "debug wordlocal is ^${wordLocal}^"
+#						if [ "${word}" != "${wordLocal}" ]; then {
+						if ( grep -i "\%${wordLocal}\%" "${file}" ); then {
+							$(`dirname "${file}"`/run $(basename "${file%%.txt}"))
+							say -v "${VOICE}" "${word} `basename ${file%%.txt}`"
+						break
+						}; fi
+#						}; fi
+					}; done
+				}; done
+				#say -v "${VOICE}" << EOF
+				#$(cat ${ROOTS}/${word}/default)
+#EOF
+			}; fi
+		}; done
+	;;
+esac
+
+cat << EOF > /tmp/Q.xml
+<features>
+$(cat /tmp/quidspeak_*xml)
+</features>
+EOF

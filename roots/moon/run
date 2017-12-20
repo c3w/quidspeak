@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "${1}" in 
+	enabled)
+	echo "<moon><state>1</state></moon>" > /tmp/quidspeak_moon.xml
+	;;
+	disabled)
+	echo "<moon><state>0</state></moon>" > /tmp/quidspeak_moon.xml
+	;;
+esac

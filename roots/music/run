@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "${1}" in 
+	enabled)
+	echo "<audio><state>1</state></audio>" > /tmp/quidspeak_audio.xml
+	;;
+	disabled)
+	echo "<audio><state>0</state></audio>" > /tmp/quidspeak_audio.xml
+	;;
+esac

@@ -1,0 +1,18 @@
+get query to web service with single word
+return xml with word match and details
+parse details into say string
+(post word into next match?)
+word extraction - take all words and run root+2ndarys(+thesaurus)
+e.g. "can we magnify that?"
+for loop on words, post, retreive matches for root
+for loop on words with root again with 2ndary match, i.e. magnify 10x, timelapse normal, timelapse double.  explain
+(thesaurus on no matches)
+
+examples:
+magnify (2, 4, etc)
+timelapse (period)
+
+
+problems:
+when to submit - per word? how to scan real-time words -- dragon!
+

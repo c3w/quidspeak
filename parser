@@ -1,0 +1,6 @@
+#!/bin/bash
+export nocasematch=True
+while [ 1 ]; do {
+	read -d\. TEXT
+	/Users/c3w/werk/quidspeak/quidspeak ${TEXT}
+}; done

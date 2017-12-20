@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "${1}" in 
+	enabled)
+	echo "<candy><state>1</state></candy>" > /tmp/quidspeak_candy.xml
+	;;
+	disabled)
+	echo "<candy><state>0</state></candy>" > /tmp/quidspeak_candy.xml
+	;;
+esac

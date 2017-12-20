@@ -1,0 +1,10 @@
+#!/bin/bash
+
+case "${1}" in 
+	enabled)
+	echo "<sun><state>1</state></sun>" > /tmp/quidspeak_sun.xml
+	;;
+	disabled)
+	echo "<sun><state>0</state></sun>" > /tmp/quidspeak_sun.xml
+	;;
+esac

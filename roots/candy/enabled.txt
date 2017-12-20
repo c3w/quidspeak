@@ -1,0 +1,6 @@
+%on%
+%enable%
+%watch%
+%view%
+%appear%
+%see%
